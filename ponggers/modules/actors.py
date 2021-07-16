@@ -1,13 +1,16 @@
 from pygame import *; from random import randint;
 
 class player(sprite.Sprite):
-	def __init__(self, textura, largura, altura):
+	def __init__(self, textura, largura, altura, fonte):
 		#pucha a classe super()
 		super().__init__()
 
 #textura e corpo
 		self.image = image.load(textura)
 		self.rect = self.image.get_rect()
+		self.score = 0
+		self.pontos = fonte.render(str(self.score), True, (0, 0, 0), (255, 255, 255))
+		self.pontosRect = self.pontos.get_rect()
 
 #movimento
 	def moveUp(self, pixels):
@@ -23,7 +26,7 @@ class player(sprite.Sprite):
 		self.rect.y += pixels
 		#limite da tela dnv
 		if self.rect.y > 492:
-			self.rect.y = 492
+			self.rect.y = 492	
 
 
 class ball(sprite.Sprite):
@@ -38,24 +41,10 @@ class ball(sprite.Sprite):
 		self.sfx = bolasfx
 		
 #faz a bola mecher
-	def update(self):
+	def update(self, p1, p2):
 		self.rect.x += self.vel[0]
 		self.rect.y += self.vel[1]
 
-		#não deixa a bola sair do mapa
-		if self.rect.x>=786:
-			self.vel[0] = -self.vel[0]
-			self.sfx.play()
-			return 
-		if self.rect.x<=0:
-			self.vel[0] = -self.vel[0]
-			self.sfx.play()
-		if self.rect.y>586:
-			self.vel[1] = -self.vel[1]
-			self.sfx.play()
-		if self.rect.y<0:
-			self.vel[1] = -self.vel[1]
-			self.sfx.play()
 
 #faz a bola quicar
 	def bounce(self):
@@ -69,3 +58,5 @@ class ball(sprite.Sprite):
 		self.vel[1] = randint(-3, 3)
 		while self.vel[1] == 0:
 			self.vel[1] = randint(-3, 3)
+
+
