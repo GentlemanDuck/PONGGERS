@@ -8,6 +8,9 @@ Gentleman Duck
 I recommend lowering the volume, as the sfx are really loud.
 	
 Controls:
-	player 1 : [W] and [S] to move 
-	player 2 : [UP] and [DOWN] to move
+
+	PLAYER 1 : [W] and [S] to move |
+	
+	PLAYER 2 : [UP] and [DOWN] to move |
+	
 	[ ESC ] to open menu
