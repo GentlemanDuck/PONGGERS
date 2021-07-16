@@ -2,10 +2,12 @@
 It's a PONG clone. My first Python 3 project.
 
 made by:
-Gentleman Duck
+
+	Gentleman Duck
 
 [  ATTENTION  ]:
-I recommend lowering the volume, as the sfx are really loud.
+
+	I recommend lowering the volume, as the sfx are really loud.
 	
 Controls:
 
